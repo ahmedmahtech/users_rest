@@ -1,0 +1,24 @@
+<mvc:View controllerName="ahmed_malik_rest.users_rest.controller.PostObject" xmlns:l="sap.ui.layout" xmlns:f="sap.ui.layout.form"
+	xmlns:mvc="sap.ui.core.mvc" xmlns:core="sap.ui.core" xmlns="sap.m">
+	<VBox class="sapUiSmallMargin">
+		<f:SimpleForm id="SimpleFormToolbar" editable="true" layout="ResponsiveGridLayout" labelSpanXL="4" labelSpanL="3" labelSpanM="4"
+			labelSpanS="12" adjustLabelSpan="false" emptySpanXL="0" emptySpanL="4" emptySpanM="0" emptySpanS="0" columnsXL="2" columnsL="1" columnsM="1"
+			singleContainerFullSize="false" ariaLabelledBy="Title1">
+			<f:toolbar>
+				<Toolbar id="TB1">
+					<Title id="Title1" text="Posts Management"/>
+				</Toolbar>
+			</f:toolbar>
+			<f:content>
+				<Label text="Title"/>
+				<Input id="title" value="{PostObjectView>/title}"/>
+				<Label text="Body"/>
+				<TextArea id="body" rows="4"  value="{PostObjectView>/body}"/>
+				<Label/>
+			</f:content>
+			<FlexBox justifyContent="Center">
+				<Button icon="sap-icon://save" text="Save" width="100px" press=".onSave"/>
+			</FlexBox>
+		</f:SimpleForm>
+	</VBox>
+</mvc:View>

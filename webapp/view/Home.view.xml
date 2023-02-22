@@ -1,0 +1,3 @@
+<mvc:View controllerName="ahmed_malik_rest.users_rest.controller.Home" xmlns:mvc="sap.ui.core.mvc" displayBlock="true" xmlns="sap.m">
+	<App id="app" busy="{homeView>/busy}" busyIndicatorDelay="{homeView>/delay}"/>
+</mvc:View>

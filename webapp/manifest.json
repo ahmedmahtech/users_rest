@@ -1,0 +1,121 @@
+{
+	"_version": "1.12.0",
+	"sap.app": {
+		"id": "ahmed_malik_rest.users_rest",
+		"type": "application",
+		"i18n": "i18n/i18n.properties",
+		"applicationVersion": {
+			"version": "1.0.0"
+		},
+		"title": "{{appTitle}}",
+		"description": "{{appDescription}}",
+		"sourceTemplate": {
+			"id": "ui5template.basicSAPUI5ApplicationProject",
+			"version": "1.40.12"
+		}
+	},
+	"sap.ui": {
+		"technology": "UI5",
+		"icons": {
+			"icon": "",
+			"favIcon": "",
+			"phone": "",
+			"phone@2": "",
+			"tablet": "",
+			"tablet@2": ""
+		},
+		"deviceTypes": {
+			"desktop": true,
+			"tablet": true,
+			"phone": true
+		}
+	},
+	"sap.ui5": {
+		"flexEnabled": false,
+		"rootView": {
+			"viewName": "ahmed_malik_rest.users_rest.view.Home",
+			"type": "XML",
+			"async": true,
+			"id": "Home"
+		},
+		"dependencies": {
+			"minUI5Version": "1.65.6",
+			"libs": {
+				"sap.ui.layout": {},
+				"sap.ui.core": {},
+				"sap.m": {}
+			}
+		},
+		"contentDensities": {
+			"compact": true,
+			"cozy": true
+		},
+		"models": {
+			"i18n": {
+				"type": "sap.ui.model.resource.ResourceModel",
+				"settings": {
+					"bundleName": "ahmed_malik_rest.users_rest.i18n.i18n"
+				}
+			}
+		},
+		"resources": {
+			"css": [{
+				"uri": "css/style.css"
+			}]
+		},
+		"routing": {
+			"config": {
+				"routerClass": "sap.m.routing.Router",
+				"viewType": "XML",
+				"async": true,
+				"viewPath": "ahmed_malik_rest.users_rest.view",
+				"controlAggregation": "pages",
+				"controlId": "app",
+				"clearControlAggregation": false,
+				"bypassed": {
+					"target": []
+				}
+			},
+			"routes": [{
+				"name": "UserObject",
+				"pattern": "User/{objectId}",
+				"titleTarget": "",
+				"greedy": false,
+				"target": ["UserObject"]
+			}, {
+				"name": "UsersList",
+				"pattern": "",
+				"titleTarget": "",
+				"greedy": false,
+				"target": ["UsersList"]
+			}, {
+				"name": "PostObject",
+				"pattern": "Post/:objectId:",
+				"titleTarget": "",
+				"greedy": false,
+				"target": ["PostObject"]
+			}],
+			"targets": {
+				"UserObject": {
+					"viewType": "XML",
+					"viewName": "UserObject",
+					"viewId": "UserObject",
+					"viewLevel": 2
+				},
+				"UsersList": {
+					"viewType": "XML",
+					"transition": "slide",
+					"clearControlAggregation": false,
+					"viewName": "UsersList",
+					"viewLevel": 1
+				},
+				"PostObject": {
+					"viewType": "XML",
+					"viewName": "PostObject",
+					"viewLevel": 3,
+					"viewId": "PostObject"
+				}
+			}
+		}
+	}
+}

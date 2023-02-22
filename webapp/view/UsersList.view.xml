@@ -1,0 +1,45 @@
+<mvc:View xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m"
+	controllerName="ahmed_malik_rest.users_rest.controller.UsersList" xmlns:html="http://www.w3.org/1999/xhtml" xmlns:semantic="sap.f.semantic"
+	displayBlock="true" xmlns:footerbar="sap.ushell.ui.footerbar">
+	<semantic:SemanticPage id="page" headerPinnable="false">
+		<semantic:titleHeading >
+			<Title text="{i18n>worklistViewTitle}" level="H2"/>
+		</semantic:titleHeading>
+		<semantic:content>
+			<Table id="table" width="auto" growing="true" growingScrollToLoad="true" items="{DataModel>/}">
+				<headerToolbar>
+					<OverflowToolbar>
+						<Title id="tableHeader" text="Users" level="H3"/>
+						<ToolbarSpacer/>
+						<Button icon="sap-icon://filter" press=".handleOpenDialog"/>
+						<SearchField id="searchField" tooltip="{i18n>worklistSearchTooltip}" search=".onSearch">
+							<layoutData>
+								<OverflowToolbarLayoutData maxWidth="200px" priority="NeverOverflow"/>
+							</layoutData>
+						</SearchField>
+					</OverflowToolbar>
+				</headerToolbar>
+				<columns>
+					<Column id="userid">
+						<Text text="User ID"/>
+					</Column>
+					<Column id="usrename">
+						<Text text=" Name"/>
+					</Column>
+					<Column id="email">
+						<Text text=" Email"/>
+					</Column>
+				</columns>
+				<items>
+					<ColumnListItem type="Navigation" press=".onPress">
+						<cells>
+							<Text text="{DataModel>id}"/>
+							<Text text="{DataModel>name}"/>
+							<Text text="{DataModel>email}"/>
+						</cells>
+					</ColumnListItem>
+				</items>
+			</Table>
+		</semantic:content>
+	</semantic:SemanticPage>
+</mvc:View>

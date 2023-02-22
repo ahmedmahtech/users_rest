@@ -1,0 +1,47 @@
+<mvc:View xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" controllerName="ahmed_malik_rest.users_rest.controller.UserObject"
+	xmlns:semantic="sap.f.semantic" xmlns:footerbar="sap.ushell.ui.footerbar" xmlns:forms="sap.ui.layout.form">
+	<semantic:SemanticPage id="page" headerPinnable="true" toggleHeaderOnTitleClick="false">
+		<semantic:titleHeading>
+			<Title text=" Name: {DataModel>name}" level="H2"/>
+		</semantic:titleHeading>
+		<semantic:headerContent>
+			<Text text="Email : {DataModel>email}"/>
+			<ToolbarSpacer/>
+			<Text text="Address : {DataModel>address/street} , {DataModel>address/city} , {DataModel>address/zipcode}"/>
+			<ToolbarSpacer/>
+			<Text text="Phone : {DataModel>phone}"/>
+			<ToolbarSpacer/>
+			<Text text="Website : {DataModel>website}"/>
+			<ToolbarSpacer/>
+			<Text text="Company : {DataModel>company/name}"/>
+		</semantic:headerContent>
+		<semantic:content>
+			<Table id="table" width="auto" growing="true" growingScrollToLoad="true" items="{/}" mode="SingleSelect" >
+				<headerToolbar>
+					<OverflowToolbar>
+						<Title id="tableHeader" text="Posts" level="H3"/>
+						<ToolbarSpacer/>
+						<Button icon="sap-icon://add" text ="New" press=".onAddPost"/>
+						<Button icon="sap-icon://delete" text ="Delete" press=".onDeletePost"/>
+					</OverflowToolbar>
+				</headerToolbar>
+				<columns>
+					<Column id="title">
+						<Text text="Title"/>
+					</Column>
+					<Column id="body">
+						<Text text="Body"/>
+					</Column>
+				</columns>
+				<items>
+					<ColumnListItem  type="Navigation" press=".onPress" >
+						<cells>
+							<Text text="{title} "/>
+							<Text text="{body}"/>
+						</cells>
+					</ColumnListItem>
+				</items>
+			</Table>
+		</semantic:content>
+	</semantic:SemanticPage>
+</mvc:View>
